@@ -6,7 +6,9 @@ A bisection algorithm for time-optimal trajectory planning along fully specified
 
 This repository contains C++ source code for BA, a bisection algorithm for time-optimal trajectory planning along fully specified paths. A detailed description of the algorithm is provided in the following article:
 
-Barnett, E. and Gosselin, C. "A Bisection Algorithm For Time-Optimal Trajectory Planning Along Fully Specified Paths", International Journal of Robotics Research, submitted.
+Barnett, E. and Gosselin, C. "A Bisection Algorithm For Time-Optimal Trajectory Planning Along Fully Specified Paths", 2020, IEEE Transactions on Robotics,  DOI: 10.1109/TRO.2020.3010632, https://ieeexplore.ieee.org/document/9160859
+
+Please cite this article when referring to the algorithm.
 
 The source code is divided into two main subprojects:
 - batotp: a static library that contains all of the functions used in the BA algorithm
@@ -14,7 +16,7 @@ The source code is divided into two main subprojects:
 
 Many configuration parameters can be set by using the input/config.dat file. Additional customization can be accomplished by modifying the batest subproject (test/main.cpp). For example, output data files are not needed for all applications. Finally, the BA algorithm can be readily integrated into other projects by linking the batotp static library.
 
-2. Licencse --------------------------------------------------
+2. License --------------------------------------------------
 
 The source code for BA is subject to the terms of the Berkeley Software Distribution (BSD) 3-clause license. A copy of the BSD license is constined in the file COPYING.BSD. If a copy of the BSD license was not distributed with this file, you can obtain one at
 https://opensource.org/licenses/BSD-3-Clause.
