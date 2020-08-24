@@ -1,0 +1,48 @@
+// Input control file for bisection algorithm (BA) trajectory planning (RR robot)
+// Input rules and descriptions of the variables are provided in the file "README_for_config_file.txt"
+
+RR       // robotTypeStr (string)
+0        // isParallel (1 or 0) 
+2        // _nJoints   (int)
+3        // nCart      (int)
+RRlemniscate.dat // trajFileName (string) 
+1        // isBINfile  (1 or 0)
+JOINT    // pathType   (string)
+
+// CONSTRAINTS
+1           // areJntAnglesDegrees (1 or 0)
+1           // isJntVelConOn  (1 or 0)
+180 240     // JntVelLims     (float) [deg/s]
+0           // isJntAccConOn  (1 or 0)
+0 0         // JntAccLims     (float) [deg/s^2]
+1           // isTrqConOn     (1 or 0)
+60 40       // JntTrqMax      (float) [Nm]
+NAN NAN     // JntTrqMin      (float) [Nm]
+1           // isCartVelConOn (1 or 0)
+1.5         // CartVelMax     (float) [m/s]
+0           // isCartAccConOn (1 or 0)
+0           // CartAccMax     (float) [m/s^2]
+
+// INTEGRATION PARAMETERS
+0.002  // integRes     (float) [s]
+600    // maxIntegTime (float) [s]
+
+// OTHER CONTROLS
+0     // inputDecimFact (int) [nodes]
+1     // smoothWindow   (int) [nodes]
+1     // is_sdotOut     (1 or 0)
+1e-6  // jntThresh      (float) [deg]
+1e-6  // cartThresh     (float) [m]
+0 1 0 // sWeights       (float)
+1     // scaleType      (0, 1, or 2)
+.5    // thetaNormRes   (float) [deg]
+.5    // thetaNormRes2  (float) [deg]
+0.002 // cartNormRes    (float) [m]
+0.002 // cartNormRes2   (float) [m]
+.008  // outRes         (float) [s]
+1     // outSmoothFact  (int)
+0     // isSVD          (1 or 0)
+0     // isPar2Ser      (1 or 0)
+
+
+

@@ -1,0 +1,48 @@
+// Input control file for bisection algorithm (BA) trajectory planning (3DOF cable-suspended paralle mechanism)
+// Input rules and descriptions of the variables are provided in the file "README_for_config_file.txt"
+
+CSPR3DOF // robotTypeStr (string)
+1        // isParallel (1 or 0) 
+3        // _nJoints   (int)
+3        // nCart      (int)
+CSPR3DOFspline.dat // trajFileName (string) 
+1        // isBINfile  (1 or 0)
+CART     // pathType   (string)
+
+// CONSTRAINTS
+0           // areJntAnglesDegrees (1 or 0)
+1           // isJntVelConOn  (1 or 0)
+4 4 4       // JntVelLims (float) [m/s]
+1           // isJntAccConOn  (1 or 0)
+8 8 8       // JntAccLims (float) [m/s]
+1           // isTrqConOn     (1 or 0)
+12 12 12    // JntTrqMax      (float) [N]
+ 1  1  1    // JntTrqMin      (float) [N]
+1           // isCartVelConOn (1 or 0)
+4           // CartVelMax     (float) [m/s]
+0           // isCartAccConOn (1 or 0)
+100         // CartAccMax     (float) [m/s^2]
+
+// INTEGRATION PARAMETERS
+0.01   // integRes     (float) [s]
+6000   // maxIntegTime (float) [s]
+
+// OTHER CONTROLS
+1     // inputDecimFact (int) [nodes]
+1     // smoothWindow   (int) [nodes]
+1     // is_sdotOut     (1 or 0)
+1e-6  // jntThresh      (float) [m]
+1e-6  // cartThresh     (float) [m]
+0 0 1 // sWeights       (float)
+2     // scaleType      (0, 1, or 2)
+0.01  // thetaNormRes   (float) [m]
+0.01  // thetaNormRes2  (float) [m]
+0.01  // cartNormRes    (float) [m]
+0.01  // cartNormRes2   (float) [m]
+0.02  // outRes         (float) [s]
+1     // outSmoothFact  (int)
+0     // isSVD          (1 or 0)
+1     // isPar2Ser      (1 or 0)
+
+
+
