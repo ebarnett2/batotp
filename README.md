@@ -11,14 +11,14 @@ Barnett, E. and Gosselin, C. "A Bisection Algorithm For Time-Optimal Trajectory 
 Please cite this article when referring to the algorithm.
 
 The source code is divided into two main subprojects:
-- batotp: a static library that contains all of the functions used in the BA algorithm
+- batotp: a library that contains all of the functions used in the BA algorithm
 - test: builds the execuatble batest, which depends on the batotp library. batest executes the main steps needed for a typical time-optimal trajectory planning problem: read in input data; interpolate input data; perform time optimization; interpolate output data; write output data.
 
-Many configuration parameters can be set by using the input/config.dat file. Additional customization can be accomplished by modifying the batest subproject (test/main.cpp). For example, output data files are not needed for all applications. Finally, the BA algorithm can be readily integrated into other projects by linking the batotp static library.
+Many configuration parameters can be set by using the input/config.dat file. Additional customization can be accomplished by modifying the batest subproject (test/main.cpp). For example, output data files are not needed for all applications. Finally, the BA algorithm can be readily integrated into other projects by linking the batotp library.
 
 2. License --------------------------------------------------
 
-The source code for BA is subject to the terms of the Berkeley Software Distribution (BSD) 3-clause license. A copy of the BSD license is constined in the file COPYING.BSD. If a copy of the BSD license was not distributed with this file, you can obtain one at
+The source code for BA is subject to the terms of the Berkeley Software Distribution (BSD) 3-clause license. A copy of the BSD license is contained in the LICENSE file. If a copy of the BSD license was not distributed with this file, you can obtain one at
 https://opensource.org/licenses/BSD-3-Clause.
 
 3. Compiling BA --------------------------------------------------
@@ -63,7 +63,6 @@ b. Using Qt with the gcc compiler
 https://download.qt.io/archive/qt/5.10/5.10.0/qt-opensource-linux-x64-5.10.0.run
 - During the installation of Qt, at the "Select Components" page, select "Desktop gcc 64-bit" below "Qt 5.10.1" and "Qt Creator 4.5.0" below Tools. Use the default options for everything else. You will need to create a Qt account if you don't already have one.
 - Open the file time_optimal_trajectory_planning.pro with Qt Creator. This file is located in the folder where BA was extracted to.
-- In the menu at the left, click "Projects" and then uncheck the box for "Shadow build" in the Build Settings (you have to do this for both the Debug and Release build configurations)
 - In the menu at the left, click "Edit", then right mouse-click time_optimal_trajectory_planning in the Projects tab and select Build
 - The compiled executable is test/batest
 - You can run the executable in Qt using the keystroke "CTRL + R", or you can run it separately in another terminal
@@ -90,10 +89,10 @@ https://sourceforge.net/projects/mingw/files/latest/download?source=files
 - The compiled executable is test/batest.exe
 
 b. Using Qt and Microsoft Visual Studio
-- Install the latest version of Qt. For Windows, , at the time this document was written, the latest version was 5.10.0, available here:
+- Install the latest version of Qt. For Windows, at the time this document was written, the latest version was 5.10.0, available here:
 https://download.qt.io/archive/qt/5.10/5.10.0/qt-opensource-windows-x86-5.10.0.exe
 - Install Qt
-- When you get to the "Select Components" page, under 5.10.0 select "msvc2017 64-bit"
+- When you get to the "Select Components" page, under 5.10.0 select "msvc2017 64-bit" if using Visual Studio 2017 Community. Otherwise, select the option that corresponds to the desired version of Visual Studio.
 - Follow the rest of the instructions in Section 3.1.3.b above
 - The compiled executable is x64/Debug/batest.exe or x64/Release/batest.exe
 
@@ -144,7 +143,7 @@ Five examples can be found in the input folder, which correspond to the five rob
 
 Any of these examples can be executed by copying the config.dat file from the robot subfolder to the input folder, along with the trajectory data file specified in config.dat.
 
-Detailed descriptions are provided for (d) and (e) below. GNU Octave .m scripts are described below for generating input trajectory data files and for plotting the optimization output. Matlab can also be used to run the scripts. Octave is free, open-source Scientific Programming Language with a syntax is largely compatible with Matlab:
+Detailed descriptions are provided for (d) and (e) below. Additionally, GNU Octave .m scripts are described below for generating input trajectory data files and for plotting the optimization output. Matlab can also be used to run the scripts. Octave is free, open-source Scientific Programming Language with a syntax is largely compatible with Matlab:
 
 https://www.gnu.org/software/octave/
 
@@ -167,7 +166,7 @@ generateGEN7DOFpathBasic.m - Generates the ASCII input data file "GEN7DOFpathBas
 
 generateGEN7DOFpath.m - Generates 20 random traj. points, then uses spline interpolation to create a 400-point trajectory. Generates the input files "GEN7DOFpath0001.csv" and "GEN7DOFpath0001.dat". These files are identical, except one is in ASCII CSV format and one is in binary format. Binary format is preferred, especially for large data sets. Multiple random trajectories can be generated by changing the "nIter" parameter.
 
-The config.dat file specifies "GEN7DOFpathBasic.csv" as the traj. data file, so copy config.dat and GEN7DOFpathBasic.csv to the input folder to optimize this path.
+The config.dat file specifies "GEN7DOFpathBasic.csv" as the traj. data file, so in order to run this example, both config.dat and GEN7DOFpathBasic.csv must be copied to the input folder.
 
 5.1.2 Executing batest / Running the optimization
 Ubuntu: Open a terminal in the Release or Debug folder. Run "./batest".
