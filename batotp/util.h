@@ -40,6 +40,8 @@
 #include <algorithm> // std::min
 #include <functional> // transform,bind1st
 #include <cmath>
+#include <cstdio>
+#include <string>
 
 struct Time
 {
